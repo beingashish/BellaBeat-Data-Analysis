@@ -48,7 +48,7 @@ Step 3.	**ROCCC**
 
 **Cited**- Not Known
 
-## **Questions and Answers**
+## Questions and Answers
 
 Q 1.	How are you addressing licensing, privacy, security, and accessibility?
 
@@ -65,7 +65,7 @@ Q 3.	Are there any problems with the data?
 
 Answer: Yes, there are problems with the data. There is total 33 participants data instead of 30 as claimed in the data description. Gender details are not outlined in the dataset.
 
-#  **Case Study Roadmap -Process **
+#  Case Study Roadmap -Process
 
 
 ## Step 1: Load the packages
@@ -126,39 +126,20 @@ Weight_Log %>%
 ![Calories vs Number of Steps](https://user-images.githubusercontent.com/40716332/173922724-795e5652-c8f4-4a1d-a2b1-01d8868fd03b.png)
 
 
-ggplot(data=Daily_Activity, aes(x=TotalSteps, y=SedentaryMinutes, color=TotalDistance))+ 
-  geom_point()+
-  stat_smooth(se=FALSE)+
-  scale_color_gradient(low="blue", high="yellow")+
-  labs(title="Calories burnt against distance")+
-  xlab("Total Steps")+
-  ylab("Sedentary Minutes")
-
 #User with higher steps count has lower BMI
-ggplot(data=merged_data, aes(x=TotalSteps, y = BMI, color=Calories))+ 
-  geom_point()+ 
-  stat_smooth(se=FALSE)+
-  scale_color_gradient(low="blue", high="yellow")
+
+![Total Steps Vs BMI](https://user-images.githubusercontent.com/40716332/173923768-220cb4dc-ab81-4c24-8d4b-91b02d1aaa61.png)
+
 
 #Total Distance Vs Total Calories
-ggplot(data=Daily_Activity,mapping = aes(x=TotalDistance, y=Calories))+
-  geom_smooth(se=FALSE)+
-  geom_point(alpha=0.5, color="salmon")+
-  labs(title="Total Steps Vs Calories")+
-  theme(panel.background = element_blank())+
-  theme(panel.grid.major = element_line(color = "grey"))+
-  xlab("Total Distance")+
-  ylab("Calories")
+
+![Total Distance Vs Total Calories](https://user-images.githubusercontent.com/40716332/173923802-48825ef4-1b5e-473c-be57-04eab5f732ea.png)
+
 
 #Sleep Activity
-ggplot(data=Sleep_Day, mapping = aes(x=TotalTimeInBed, y=TotalMinutesAsleep))+
-  geom_point()+
-  geom_smooth(se=F)+
-  theme(panel.background = element_blank())+
-  theme(panel.grid.major = element_line(color = "grey"))+
-  labs(title="Total Minutes Asleep vs Total Time in Bed")+
-  xlab("Total Time in Bed")+
-  ylab("Total Minutes Asleep")
+
+ ![Sleep Activitu](https://user-images.githubusercontent.com/40716332/173923864-c6deed4e-0579-441d-8212-f2904751e300.png)
+
   
 #Sleep time in hours instead of minutes
 sleep_day_in_hour <-Sleep_Day
