@@ -145,24 +145,35 @@ Weight_Log %>%
   
 ### Sleep time in hours instead of minutes
 sleep_day_in_hour <-Sleep_Day
+
 sleep_day_in_hour$TotalMinutesAsleep <- sleep_day_in_hour$TotalMinutesAsleep/60
+
 sleep_day_in_hour$TotalTimeInBed <- sleep_day_in_hour$TotalTimeInBed/60
+
 head(sleep_day_in_hour)
 
 ### Check for any sleep outliers. # of times user sleep more than 10 hours or less than 1
 
 sum(sleep_day_in_hour$TotalMinutesAsleep > 9)
+
 sum(sleep_day_in_hour$TotalTimeInBed > 9)
+
 sum(sleep_day_in_hour$TotalMinutesAsleep < 2)
+
 sum(sleep_day_in_hour$TotalTimeInBed < 2)
 
 ### Awake time in bed
 
 awake_in_bed <- mutate(Sleep_Day, AwakeTime = TotalTimeInBed - TotalMinutesAsleep)
+
 awake_in_bed <- awake_in_bed %>% 
+
   filter(AwakeTime >= 55) %>% 
+  
   group_by(Id) %>% 
+  
   arrange(AwakeTime, desc=TRUE) 
+ 
   
 ### Total 13 users are awake for more number of minutes in bed
 
