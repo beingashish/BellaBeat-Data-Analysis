@@ -1,8 +1,8 @@
 # BellaBeat-Data-Analysis
 
-Author- Ashish Verma
+**Author**- Ashish Verma
 
-Date- Wednesday, May 11, 2022
+**Date**- Wednesday, May 11, 2022
 
 The case study follows the six steps of data analysis process
 
