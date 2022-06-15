@@ -179,3 +179,7 @@ awake_in_bed <- awake_in_bed %>%
 
 n_distinct(awake_in_bed$Id)
 
+# Recommendation
+1. As there are a few users who remains awake for a long time after going to bed, Bellabeat can introduce a functionality in their devices to detect the awake time and ask users to sleep and stay away from distractions
+2. As sedentary users burn less calories and take less steps, Bellabeat can instroduce the functionality of sending notifications to user every hour to move around and complete certain steps.
+3. As people have habit of manually updating the data, only automatic update of data should be allowed for accurate analysis
