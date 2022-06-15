@@ -116,7 +116,7 @@ Weight_Log %>%
   summarise("Manual Weight Report"=n()) %>%
   distinct()
 
-#Sedentary people takes less steps but burns more calories
+### Sedentary people takes less steps but burns more calories
 
 ![Total Steps vs Calories](https://user-images.githubusercontent.com/40716332/173922698-b6473c44-73e7-4a3f-9e7a-f301b470d3e1.png)
 
