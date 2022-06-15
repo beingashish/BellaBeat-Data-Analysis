@@ -121,43 +121,50 @@ Weight_Log %>%
 ![Total Steps vs Calories](https://user-images.githubusercontent.com/40716332/173922698-b6473c44-73e7-4a3f-9e7a-f301b470d3e1.png)
 
 
-#Checking for Sedentary User Lifestyle
-#Steps and Calories- More active users burn more calories
+### Checking for Sedentary User Lifestyle
+
+##### Steps and Calories- More active users burn more calories
+
 ![Calories vs Number of Steps](https://user-images.githubusercontent.com/40716332/173922724-795e5652-c8f4-4a1d-a2b1-01d8868fd03b.png)
 
 
-#User with higher steps count has lower BMI
+### User with higher steps count has lower BMI
 
 ![Total Steps Vs BMI](https://user-images.githubusercontent.com/40716332/173923768-220cb4dc-ab81-4c24-8d4b-91b02d1aaa61.png)
 
 
-#Total Distance Vs Total Calories
+### Total Distance Vs Total Calories
 
 ![Total Distance Vs Total Calories](https://user-images.githubusercontent.com/40716332/173923802-48825ef4-1b5e-473c-be57-04eab5f732ea.png)
 
 
-#Sleep Activity
+### Sleep Activity
 
  ![Sleep Activitu](https://user-images.githubusercontent.com/40716332/173923864-c6deed4e-0579-441d-8212-f2904751e300.png)
 
   
-#Sleep time in hours instead of minutes
+### Sleep time in hours instead of minutes
 sleep_day_in_hour <-Sleep_Day
 sleep_day_in_hour$TotalMinutesAsleep <- sleep_day_in_hour$TotalMinutesAsleep/60
 sleep_day_in_hour$TotalTimeInBed <- sleep_day_in_hour$TotalTimeInBed/60
 head(sleep_day_in_hour)
 
-#Check for any sleep outliers. # of times user sleep more than 10 hours or less than 1  
+### Check for any sleep outliers. # of times user sleep more than 10 hours or less than 1
+
 sum(sleep_day_in_hour$TotalMinutesAsleep > 9)
 sum(sleep_day_in_hour$TotalTimeInBed > 9)
 sum(sleep_day_in_hour$TotalMinutesAsleep < 2)
 sum(sleep_day_in_hour$TotalTimeInBed < 2)
+
+### Awake time in bed
 
 awake_in_bed <- mutate(Sleep_Day, AwakeTime = TotalTimeInBed - TotalMinutesAsleep)
 awake_in_bed <- awake_in_bed %>% 
   filter(AwakeTime >= 55) %>% 
   group_by(Id) %>% 
   arrange(AwakeTime, desc=TRUE) 
-#Total 13 users are awake for more 
+  
+### Total 13 users are awake for more number of minutes in bed
+
 n_distinct(awake_in_bed$Id)
 
